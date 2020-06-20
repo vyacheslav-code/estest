@@ -6,17 +6,9 @@ import User from 'components/User'
 
 const IndexPage = ({ users }) => {
   const [query, setQuery] = useState('')
-  const [deleteLoading, setDeleteLoading] = useState(false)
 
   const handleDeleteUser = (id) => {
-    setDeleteLoading(true)
     deleteUser(id)
-      .then(() => {
-        setDeleteLoading(false)
-      })
-      .catch(() => {
-        setDeleteLoading(false)
-      })
   }
 
   return <Layout>
@@ -42,7 +34,6 @@ const IndexPage = ({ users }) => {
             key={user.username}
             user={user}
             onDelete={handleDeleteUser}
-            deleteLoading={deleteLoading}
           />)}
         </tbody>
       </table>

@@ -5,7 +5,8 @@ const Wrapper = styled.tr`
     padding: 4px;
   }
   
-  user--link {
+  .user--link {
+    cursor: pointer;
     color: #387EF5;
     
     &:visited {
